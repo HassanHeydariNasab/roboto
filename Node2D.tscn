@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://k.png" type="Texture" id=2]
+[ext_resource path="res://Kugloj/Kuglo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Malamikoj/Malamiko.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tileset/gxardeno.tres" type="TileSet" id=5]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 32, -59.4286, 62.4762, -28.9524, 62.4762, 32, 32, 62.4762, -28.9524, 62.4762, -59.4286, 32, -59.4286, -28.9524, -28.9524, -59.4286 )
+
+[node name="Bazo" type="Node2D"]
+
+transform/pos = Vector2( 259.237, 292.024 )
+script/script = ExtResource( 1 )
+
+[node name="K" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 80.763, 106.976 )
+transform/scale = Vector2( 0.65625, 0.65625 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="K"]
+
+editor/display_folded = true
+transform/pos = Vector2( 15.2381, -15.2381 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 2.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 6
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="K/RigidBody2D"]
+
+transform/pos = Vector2( 1.52381, 1.52381 )
+transform/scale = Vector2( 0.952381, 0.952381 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="K/RigidBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 32, -59.4286, 62.4762, -28.9524, 62.4762, 32, 32, 62.4762, -28.9524, 62.4762, -59.4286, 32, -59.4286, -28.9524, -28.9524, -59.4286 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Camera2D" type="Camera2D" parent="K/RigidBody2D"]
+
+transform/pos = Vector2( 0.361084, 4.60791 )
+transform/scale = Vector2( 1.52381, 1.52381 )
+offset = Vector2( 200, 0 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 10.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Kuglo" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 90, 0 )
+
+[node name="Malamikoj" type="Node" parent="."]
+
+[node name="Malamiko1" parent="Malamikoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 729.237, 322.024 )
+
+[node name="Malamiko2" parent="Malamikoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2789.24, 172.024 )
+
+[node name="Malamiko3" parent="Malamikoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1179.24, 402.024 )
+
+[node name="Malamiko4" parent="Malamikoj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1729.24, 432.024 )
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 5 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -65519, 1, -65517, 0, -65516, 0, 13, 1, 15, 0, 16, 0, 19, 2, 20, 2, 131069, 1, 131071, 0, 65536, 0, 65537, 0, 65538, 0, 65539, 0, 65540, 0, 65541, 0, 65542, 0, 65543, 0, 65544, 0, 65545, 0, 65546, 0, 65547, 0, 65548, 0, 65551, 2, 65552, 2, 65553, 2, 65554, 2, 65555, 2, 65556, 2, 196602, 0, 196603, 0, 196604, 0, 196607, 2, 131072, 2, 131073, 2, 131074, 2, 131075, 2, 131076, 2, 131077, 2, 131078, 2, 131079, 2, 131080, 2, 131081, 2, 131082, 2, 131083, 2, 131084, 2, 131085, 2, 131086, 2, 131087, 2, 131088, 2, 131089, 2, 131090, 2, 131091, 2, 131092, 2, 262138, 2, 262139, 2, 262140, 2, 262141, 2, 262142, 2, 262143, 2, 196608, 2, 196609, 2, 196610, 2, 196611, 2, 196612, 2, 196613, 2, 196614, 2, 196615, 2, 196616, 2, 196617, 2, 196618, 2, 196619, 2, 196620, 2, 196621, 2, 196622, 2, 196623, 2, 196624, 2, 196625, 2, 196626, 2, 196627, 2, 196628, 2 )
+
+
