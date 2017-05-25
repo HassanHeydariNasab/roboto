@@ -4,7 +4,15 @@
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends Node2D\n\nfunc _ready():\n\tset_fixed_process(true)\nfunc _fixed_process(delta):\n\tfor korpo in get_node(\"Kuglo\").get_colliding_bodies():\n\t\tif korpo.get_name() == \"Malamiko\":\n\t\t\tkorpo.free()\n"
+script/source = "extends Node2D
+
+func _ready():
+	set_fixed_process(true)
+func _fixed_process(delta):
+	for korpo in get_node(\"Kuglo\").get_colliding_bodies():
+		if korpo.get_name() == \"Malamiko\":
+			korpo.free()
+"
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
@@ -20,7 +28,6 @@ script/script = SubResource( 1 )
 
 [node name="Kuglo" type="RigidBody2D" parent="."]
 
-transform/pos = Vector2( -7.62939e-06, 3.8147e-06 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -45,8 +52,7 @@ damp_override/angular = -1.0
 
 [node name="Sprite" type="Sprite" parent="Kuglo"]
 
-transform/pos = Vector2( -5.67951e-07, -10.6667 )
-transform/scale = Vector2( 0.666667, 1 )
+transform/pos = Vector2( 0, -10 )
 texture = ExtResource( 1 )
 offset = Vector2( -3.99772e-07, 10.6667 )
 
