@@ -13,9 +13,10 @@ var os = OS.get_name()
 
 onready var K = get_node("K/RigidBody2D")
 onready var T = get_node("TileMap")
-onready var Kuglo = get_node("Kuglo/Kuglo")
-onready var Kuglo_s = get_node("Kuglo/Kuglo/Sprite")
+onready var Kuglujo = get_node("Kuglujo/Sprite")
 onready var C = get_node("K/RigidBody2D/Camera2D")
+onready var F = get_node("Fiksito")
+onready var Kuglo_sceno = preload("res://Kugloj/Kuglo.tscn")
 
 
 func _ready():
@@ -24,11 +25,11 @@ func _ready():
 
 func _input(evento):
 	if evento.type == InputEvent.MOUSE_BUTTON:
-		if evento.is_pressed() == 1:
+		if evento.button_mask == 1:
 			muso_lasita = false
 			muso_lasado_konsumita = false
 			muso_tenado += 1
-		elif evento.is_pressed() == 0:
+		if evento.is_pressed() == 0:
 			muso_lasita = true
 			#Vi devas konsumi la laseco de la muso
 		
@@ -44,33 +45,36 @@ func _process(delta):
 		K.set_angular_velocity(-6)
 	if (Input.is_action_pressed("salti") or (os == "Android" and akcelometro.y > -1)) and T in K.get_colliding_bodies():
 		K.set_linear_velocity(Vector2(K.get_linear_velocity().x, -200))
-	if not pafita:
-		#Kuglo.set_scale(Vector2(1, 1))
-		#Kuglo_s.set_scale(Vector2(1, 1))
-		var a = Kuglo.get_angle_to(get_global_mouse_pos())
-		Kuglo_s.set_rot(a)
-		Kuglo.set_global_pos(Vector2(K.get_global_pos().x+10, K.get_global_pos().y-110))
+	F.set_global_pos(K.get_global_pos())
+	var a = F.get_angle_to(get_global_mouse_pos())
+	Kuglujo.set_global_rot(a)
+	Kuglujo.set_global_pos(Vector2(F.get_global_pos().x, F.get_global_pos().y))
 	if Input.is_action_pressed("pafi"):
 		muso_tenado += 1
 	if muso_lasita and not muso_lasado_konsumita and atendado_p == 0 and not pafita:
 		muso_lasado_konsumita = true
 		pafita = true
-		Kuglo.set_scale(Vector2(muso_tenado, muso_tenado))
-		Kuglo_s.set_scale(Vector2(muso_tenado/100+1, muso_tenado/100+1))
-		print(muso_tenado)
+		muso_tenado /= 4
+		if muso_tenado > 10:
+			muso_tenado = 10
+		for i in range(muso_tenado):
+			var Kuglo = Kuglo_sceno.instance()
+			add_child(Kuglo)
+			Kuglo.set_global_pos(F.get_global_pos())
+			var a = F.get_angle_to(get_global_mouse_pos())
+			Kuglo.set_rot(a)
+			a -= deg2rad(90-i*5)
+			Kuglo.get_node("Kuglo").set_linear_velocity(Vector2(cos(a)*3000+cos(a-deg2rad(5*i))*1000, -sin(a)*3000-sin(a-deg2rad(5*i))*1000))
 		muso_tenado = 0
-		var a = Kuglo.get_angle_to(get_global_mouse_pos())
-		Kuglo_s.set_rot(a)
-		Kuglo.set_linear_velocity(Vector2(cos(a)*3000, -sin(a)*3000))
 	if pafita:
 		atendado_p += 1
-		if atendado_p > 50:
+		if atendado_p > 5:
 			pafita = false
 			atendado_p = 0
 
 	if atendado_z > 20 * delta:
 		atendado_z = 0
-		target_zoom = abs(K.get_linear_velocity().x/120)+1
+		target_zoom = abs(K.get_linear_velocity().x/120)+2
 	else:
 		atendado_z += 1
 	smooth_zoom = lerp(smooth_zoom, target_zoom, ZOOM_SPEED * delta)
