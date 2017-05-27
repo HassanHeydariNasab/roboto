@@ -1,29 +1,41 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=13 format=1]
 
-[ext_resource path="res://tileset/grundo_herbo.png" type="Texture" id=1]
-[ext_resource path="res://tileset/grundo_herbo_arko.png" type="Texture" id=2]
-[ext_resource path="res://tileset/grundo.png" type="Texture" id=3]
-[ext_resource path="res://tileset/grundo_herbo_arko_.png" type="Texture" id=4]
+[ext_resource path="res://Tegolaroj/gxardeno/grundo_herbo.png" type="Texture" id=1]
+[ext_resource path="res://Tegolaroj/gxardeno/grundo_herbo_arko.png" type="Texture" id=2]
+[ext_resource path="res://Tegolaroj/gxardeno/grundo.png" type="Texture" id=3]
+[ext_resource path="res://Tegolaroj/gxardeno/grundo_herbo_arko_.png" type="Texture" id=4]
+[ext_resource path="res://Tegolaroj/gxardeno/konstruajxo.png" type="Texture" id=5]
+[ext_resource path="res://Tegolaroj/gxardeno/konstruajxo_supra.png" type="Texture" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 64, 24, 64, 64, -64, 64, -64, 24 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -128, 88, 128, -40, 128, 128, -128, 128 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -64, 64, -64, -64, 64, -64, 64, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -128, -40, 128, 88, 128, 128, -128, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -64, -64, 64, -64, 64, 64, -64, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 64, -64, 64, 64, -64, 64, -64, -64 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -59,7 +71,7 @@ texture = ExtResource( 2 )
 [node name="grundo" type="StaticBody2D" parent="herbo_arka"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -84,7 +96,7 @@ texture = ExtResource( 3 )
 [node name="grundo" type="StaticBody2D" parent="grundo"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -109,7 +121,7 @@ texture = ExtResource( 4 )
 [node name="grundo" type="StaticBody2D" parent="herbo_arka_"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -123,6 +135,56 @@ bounce = 0.0
 
 build_mode = 0
 polygon = Vector2Array( -128, -40, 128, 88, 128, 128, -128, 128 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Konstruajxo" type="Sprite" parent="."]
+
+transform/pos = Vector2( -384, -168 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Konstruajxo"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Konstruajxo/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -64, -64, 64, -64, 64, 64, -64, 64 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -384, -296 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( 64, -64, 64, 64, -64, 64, -64, -64 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 

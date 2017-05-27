@@ -9,18 +9,18 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32"
-   height="64"
-   viewBox="0 0 32 64.000001"
-   id="svg4222"
+   width="1000"
+   height="256"
+   viewBox="0 0 1000 256"
+   id="svg4420"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="kuglo.svg"
-   inkscape:export-filename="/home/hsn6/mialudo/kuglo.png"
+   sodipodi:docname="konstruajxo0.svg"
+   inkscape:export-filename="/home/hsn6/mialudo/Fonoj/konstruajxo0.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
-     id="defs4224" />
+     id="defs4422" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -28,34 +28,27 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="8.7205002"
-     inkscape:cy="30.267407"
+     inkscape:zoom="0.35"
+     inkscape:cx="452.19892"
+     inkscape:cy="-180.53948"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      units="px"
      inkscape:window-width="1024"
      inkscape:window-height="744"
      inkscape:window-x="0"
      inkscape:window-y="24"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid4770"
-       dotted="false"
-       spacingx="0.8"
-       spacingy="0.80000001" />
-  </sodipodi:namedview>
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata4227">
+     id="metadata4425">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,11 +56,15 @@
      inkscape:label="Tavolo 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-988.36216)">
-    <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#6699ff;stroke-width:4.62841845;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 16,1046.131 2.6007991,1012.6331 16,992.53415 29.399201,1012.6331 Z"
-       id="path4772"
-       inkscape:connector-curvature="0" />
+     transform="translate(0,-796.36216)">
+    <g
+       id="g280"
+       transform="matrix(1.25,0,0,-1.25,962.3375,974.29091)">
+      <path
+         d="m 0,0 0,-41.09 -18.3,0 0,21.367 -41.705,0 0,-15.121 -41.705,0 0,-13.806 -33.135,0 0,45.693 -29.342,0 0,-28.272 -14.672,0 0,-17.421 -8.408,0 0,31.228 -52.42,0 0,-31.764 -26.878,0 0,31.764 -21.488,0 0,-31.228 -10.002,0 0,11.429 -21.487,0 0,-11.429 -12.535,0 0,31.228 -39.745,0 0,-31.228 -6.333,0 0,31.228 -21.488,0 0,-31.228 -4.804,0 0,72.332 -21.488,0 0,-72.868 -25.589,0 0,49.186 -30.663,0 0,-11.984 -30.662,0 0,-17.463 -19.291,0 0,26.49 -32.881,0 0,6.519 -52.009,0 0,-6.519 -37.75,0 0,-16.766 -14.672,0 0,9.873 -23.803,0 0,9.85 -76.615,0 0,-62.457 800,0 L 30.13,0 0,0 Z"
+         style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path282"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>
