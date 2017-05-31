@@ -3,10 +3,10 @@
 [ext_resource path="res://Kugloj/Kuglo.gd" type="Script" id=1]
 [ext_resource path="res://kuglo.png" type="Texture" id=2]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10.6667, -10.6667, 7.99395e-06, -32, 10.6667, -10.6667, 0.142657, 32.2001 )
+radius = 12.1935
 
 [node name="Kuglo" type="Node2D"]
 
@@ -16,8 +16,8 @@ script/script = ExtResource( 1 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 17 )
+shapes/0/trigger = false
 collision/layers = 2
 collision/mask = 8
 mode = 0
@@ -42,11 +42,11 @@ transform/pos = Vector2( 0, -10 )
 texture = ExtResource( 2 )
 offset = Vector2( -3.99772e-07, 10.6667 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Kuglo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kuglo"]
 
-build_mode = 0
-polygon = Vector2Array( 0.142657, 32.2001, 10.6667, -10.6667, 7.99395e-06, -32, -10.6667, -10.6667 )
-shape_range = Vector2( 0, 0 )
-trigger = true
+transform/pos = Vector2( 0, 17 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 
