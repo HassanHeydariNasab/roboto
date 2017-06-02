@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Niveloj/Nivelo1/Nivelo1.gd" type="Script" id=1]
 [ext_resource path="res://K/K.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ajxoj/Skatolo_fiksita_malbona.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ajxoj/Triangulo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tegolaroj/blua/tegolaro.tres" type="TileSet" id=4]
 [ext_resource path="res://Ajxoj/Transtempilo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Ajxoj/reTranstempilo.tscn" type="PackedScene" id=6]
@@ -16,233 +16,279 @@ script/script = ExtResource( 1 )
 
 [node name="K" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -963, 807 )
+transform/pos = Vector2( -1375, 868 )
 
-[node name="Skatoloj_fiksitaj_malbonaj" type="Node" parent="."]
+[node name="Trianguloj" type="Node" parent="."]
 
 editor/display_folded = true
 
-[node name="Skatolo_fiksita_malbona" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 803, 1049 )
+transform/pos = Vector2( 1298, 1044 )
 
-[node name="Skatolo_fiksita_malbona20 18" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo23" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 9995, 1006 )
+transform/pos = Vector2( 9679, 987 )
 
-[node name="Skatolo_fiksita_malbona1" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo24" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1440, 1057 )
+transform/pos = Vector2( 10589, 995 )
 
-[node name="Skatolo_fiksita_malbona20 2" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo25" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 10646, 1002 )
+transform/pos = Vector2( 10122, 979 )
 
-[node name="Skatolo_fiksita_malbona6" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1608, 1053 )
+transform/pos = Vector2( 1475, 1044 )
 
-[node name="Skatolo_fiksita_malbona20 3" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo2" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 10825, 989 )
+transform/pos = Vector2( 1633, 1053 )
 
-[node name="Skatolo_fiksita_malbona7" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo3" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1787, 1047 )
+transform/pos = Vector2( 1801, 1044 )
 
-[node name="Skatolo_fiksita_malbona20" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo4" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 10997, 983 )
+transform/pos = Vector2( 1987, 1039 )
 
-[node name="Skatolo_fiksita_malbona8" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo5" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1938, 1041 )
+transform/pos = Vector2( 2173, 1039 )
 
-[node name="Skatolo_fiksita_malbona20 9" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo6" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 11144, 998 )
+transform/pos = Vector2( 2355, 1039 )
 
-[node name="Skatolo_fiksita_malbona2010" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo7" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12136, 393 )
+transform/pos = Vector2( 2541, 1039 )
 
-[node name="Skatolo_fiksita_malbona2011" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo8" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12127, 164 )
+transform/pos = Vector2( 2714, 1030 )
 
-[node name="Skatolo_fiksita_malbona2012" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo9" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12141, -40 )
+transform/pos = Vector2( 2903, 1033 )
 
-[node name="Skatolo_fiksita_malbona9" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo10" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2089, 1033 )
+transform/pos = Vector2( 12139, -57 )
 
-[node name="Skatolo_fiksita_malbona20 20" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16 6" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 11316, 984 )
+transform/pos = Vector2( 12119, 85 )
 
-[node name="Skatolo_fiksita_malbona2021" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo167" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12157, 612 )
+transform/pos = Vector2( 12116, 222 )
 
-[node name="Skatolo_fiksita_malbona10" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo168 4" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2256, 1025 )
+transform/pos = Vector2( 12113, 370 )
 
-[node name="Skatolo_fiksita_malbona20 7" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1685" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 11502, 976 )
+transform/pos = Vector2( 12124, 509 )
 
-[node name="Skatolo_fiksita_malbona208" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1687 4" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12464, 574 )
+transform/pos = Vector2( 12113, 651 )
 
-[node name="Skatolo_fiksita_malbona209" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16875" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12314, 742 )
+transform/pos = Vector2( 12105, 807 )
 
-[node name="Skatolo_fiksita_malbona210" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16876 2" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12314, 564 )
+transform/pos = Vector2( 12091, 946 )
 
-[node name="Skatolo_fiksita_malbona211" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo11" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12283, 267 )
+transform/pos = Vector2( 12309, -52 )
 
-[node name="Skatolo_fiksita_malbona213" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16 4" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12319, 74 )
+transform/pos = Vector2( 12289, 90 )
 
-[node name="Skatolo_fiksita_malbona212" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo165" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12469, 242 )
+transform/pos = Vector2( 12286, 227 )
 
-[node name="Skatolo_fiksita_malbona213 2" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo168 3" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12449, -57 )
+transform/pos = Vector2( 12283, 375 )
 
-[node name="Skatolo_fiksita_malbona229" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1684" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12143, 797 )
+transform/pos = Vector2( 12294, 514 )
 
-[node name="Skatolo_fiksita_malbona230" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1687 2" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12455, 393 )
+transform/pos = Vector2( 12283, 656 )
 
-[node name="Skatolo_fiksita_malbona231" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16873" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12575, 89 )
+transform/pos = Vector2( 12275, 812 )
 
-[node name="Skatolo_fiksita_malbona11" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16876 3" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2423, 1031 )
+transform/pos = Vector2( 12261, 951 )
 
-[node name="Skatolo_fiksita_malbona20 6" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo12" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 11654, 994 )
+transform/pos = Vector2( 12466, -54 )
 
-[node name="Skatolo_fiksita_malbona207" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12477, 778 )
+transform/pos = Vector2( 12446, 88 )
 
-[node name="Skatolo_fiksita_malbona12" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo17" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2699, 1045 )
+transform/pos = Vector2( 12443, 225 )
 
-[node name="Skatolo_fiksita_malbona20 19" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo18" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 11881, 1002 )
+transform/pos = Vector2( 12440, 373 )
 
-[node name="Skatolo_fiksita_malbona13" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo19" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2900, 1028 )
+transform/pos = Vector2( 12451, 512 )
 
-[node name="Skatolo_fiksita_malbona20 11" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo20" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12092, 985 )
+transform/pos = Vector2( 12440, 654 )
 
-[node name="Skatolo_fiksita_malbona14" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo21" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3198, 1025 )
+transform/pos = Vector2( 12432, 810 )
 
-[node name="Skatolo_fiksita_malbona20 12" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo22" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12390, 982 )
+transform/pos = Vector2( 12418, 949 )
 
-[node name="Skatolo_fiksita_malbona15" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo13" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3354, 1028 )
+transform/pos = Vector2( 12388, -48 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 4" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16 3" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12546, 985 )
+transform/pos = Vector2( 12368, 94 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona16" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo164" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3664, 1034 )
+transform/pos = Vector2( 12365, 231 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 15" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo168" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12856, 991 )
+transform/pos = Vector2( 12362, 379 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona17" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo169" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3856, 1034 )
+transform/pos = Vector2( 12373, 518 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 13" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo170" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 13048, 991 )
+transform/pos = Vector2( 12362, 660 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona18" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo171" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 4007, 1034 )
+transform/pos = Vector2( 12354, 816 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 17" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo172" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 13199, 991 )
+transform/pos = Vector2( 12340, 955 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona19" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo15" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 4333, 1034 )
+transform/pos = Vector2( 12558, -39 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 8" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16 5" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 13525, 991 )
+transform/pos = Vector2( 12538, 103 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona2" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo166" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1283.67, 1022.67 )
-transform/rot = 18.9982
+transform/pos = Vector2( 12535, 240 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 10" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo168 5" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 10475.7, 979.674 )
-transform/rot = 18.9982
+transform/pos = Vector2( 12532, 388 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona3" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1686" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 548, 1039 )
+transform/pos = Vector2( 12543, 527 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 16" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo1687 3" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 9740, 996 )
+transform/pos = Vector2( 12532, 669 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona4" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16874" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1132, 1049 )
+transform/pos = Vector2( 12524, 825 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 14" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16876" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 10324, 1006 )
+transform/pos = Vector2( 12510, 964 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona5" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo14" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 977, 1045 )
+transform/pos = Vector2( 12224, -41 )
+transform/rot = -179.96
 
-[node name="Skatolo_fiksita_malbona20 5" parent="Skatoloj_fiksitaj_malbonaj" instance=ExtResource( 3 )]
+[node name="Triangulo16 2" parent="Trianguloj" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 10169, 1002 )
+transform/pos = Vector2( 12204, 101 )
+transform/rot = -179.96
+
+[node name="Triangulo163" parent="Trianguloj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12201, 238 )
+transform/rot = -179.96
+
+[node name="Triangulo168 2" parent="Trianguloj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12198, 386 )
+transform/rot = -179.96
+
+[node name="Triangulo1683" parent="Trianguloj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12209, 525 )
+transform/rot = -179.96
+
+[node name="Triangulo1687" parent="Trianguloj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12198, 667 )
+transform/rot = -179.96
+
+[node name="Triangulo1688" parent="Trianguloj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12190, 823 )
+transform/rot = -179.96
+
+[node name="Triangulo1689" parent="Trianguloj" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12176, 962 )
+transform/rot = -179.96
 
 [node name="TileMap" type="TileMap" parent="."]
 
@@ -279,19 +325,19 @@ editor/display_folded = true
 
 [node name="Bonajxo5v" parent="Bonajxoj" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 5308, 1062 )
+transform/pos = Vector2( 4976, 1070 )
 
 [node name="Bonajxo5v1" parent="Bonajxoj" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 5525, 946 )
+transform/pos = Vector2( 5460, 908 )
 
 [node name="Bonajxo5v2" parent="Bonajxoj" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 5730, 1056 )
+transform/pos = Vector2( 5734, 908 )
 
 [node name="Bonajxo5v3" parent="Bonajxoj" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 5949, 953 )
+transform/pos = Vector2( 6006, 907 )
 
 [node name="Bonajxo5v4" parent="Bonajxoj" instance=ExtResource( 7 )]
 

@@ -14,6 +14,10 @@ func _ready():
 		TranslationServer.set_locale(lingvoj[lingvo_indekso])
 		get_tree().reload_current_scene()
 	Lingvo.select(lingvo_indekso)
+	
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		get_tree().change_scene("res://Kontroloj/Cxefa_menuo.tscn")
 
 func _on_Lingvo_item_selected( ID ):
 	TranslationServer.set_locale(lingvoj[ID])

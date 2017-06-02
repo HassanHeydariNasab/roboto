@@ -6,6 +6,7 @@ const lingvoj = ["eo", "en"]
 var nivelo = 0
 
 func _ready():
+	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
 	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
 	nivelo = Agordejo.get_value("Konservoj", "nivelo")

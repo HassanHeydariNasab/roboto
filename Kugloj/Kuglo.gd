@@ -9,7 +9,7 @@ func _ready():
 func _fixed_process(delta):
 	for korpo in get_node("Kuglo").get_colliding_bodies():
 		korpo_nomo = korpo.get_name()
-		if korpo_nomo == "Malamiko" or korpo_nomo == "Skatolo_fiksita_malbona":
+		if korpo_nomo == "Malamiko" or korpo_nomo == "Triangulo":
 			korpo.free()
 		queue_free()
 		

@@ -9,7 +9,11 @@ radius = 75.5556
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Node\nvar n = 5\nfunc _ready():\n\tpass\n"
+script/source = "extends Node
+var n = 5
+func _ready():
+	pass
+"
 
 [node name="Bonajxo5v" type="Node2D"]
 
@@ -24,7 +28,7 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.463235, 0, 0, 0.463235, 0, 0 )
 shapes/0/trigger = false
-collision/layers = 1
+collision/layers = 16
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0

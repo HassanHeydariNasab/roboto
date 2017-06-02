@@ -2,10 +2,13 @@
 K
 
 ##2
-Kuglo
+Kugloj
 
 ##3
-Kahelmapo
+Tegolaroj
 
 ##4
-Malamikoj
+Malbonaj
+
+##5
+Bonaj

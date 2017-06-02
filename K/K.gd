@@ -2,6 +2,7 @@ extends Node2D
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
+const lingvoj = ["eo", "en"]
 
 var pafita = false
 var atendado_p = 0
@@ -13,18 +14,28 @@ var muso_lasita = false
 var muso_lasado_konsumita = true
 var muso_tenado = 0
 var os = OS.get_name()
+var vivo = 100
 
 onready var K = get_node("RigidBody2D")
 onready var C = get_node("RigidBody2D/Camera2D")
 onready var F = get_node("Fiksito")
 onready var Kuglo_sceno = preload("res://Kugloj/Kuglo.tscn")
-onready var vivo = Globals.set("vivo", 100)
+onready var Sono_rotaciado = get_node("Sono_rotaciado")
+onready var Sono_rotaciado_malrapida = get_node("Sono_rotaciado_malrapida")
+onready var Sono_pafi = get_node("Sono_pafi")
 
 func _ready():
+	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
+	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
+	if TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
+		TranslationServer.set_locale(lingvoj[lingvo_indekso])
+		get_tree().reload_current_scene()
+	Agordejo.set_value("Konservoj", "nivelo", get_tree().get_root().get_node("Bazo").nivelo)
+	Agordejo.save(agordejo)
 	set_process(true)
 	set_process_input(true)
-	
+
 func _input(evento):
 	if evento.type == InputEvent.MOUSE_BUTTON:
 		if evento.button_mask == 1:
@@ -36,18 +47,30 @@ func _input(evento):
 		if evento.is_pressed() == 0:
 			muso_lasita = true
 			#Vi devas konsumi la laseco de la muso
-		
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		get_tree().change_scene("res://Kontroloj/Cxefa_menuo.tscn")
+
 func _process(delta):
 	var akcelometro = Input.get_accelerometer()
 	var K_koliziantaj = K.get_colliding_bodies()
 	if (Input.is_action_pressed("iri") and Input.is_action_pressed("malrapidi")) or (os == "Android" and akcelometro.x > -3 and akcelometro.x < -1):
 		K.set_angular_velocity(2)
+		#if not Sono_rotaciado_malrapida.is_playing():
+			#Sono_rotaciado_malrapida.play()
 	elif (Input.is_action_pressed("reveni") and Input.is_action_pressed("malrapidi")) or (os == "Android" and akcelometro.x < 3 and akcelometro.x > 1):
 		K.set_angular_velocity(-2)
+		#if not Sono_rotaciado_malrapida.is_playing():
+			#Sono_rotaciado_malrapida.play()
 	elif Input.is_action_pressed("iri") or (os == "Android" and akcelometro.x < -3):
 		K.set_angular_velocity(6)
+		#if not Sono_rotaciado.is_playing():
+			#Sono_rotaciado.play()
 	elif Input.is_action_pressed("reveni") or (os == "Android" and akcelometro.x > 3):
 		K.set_angular_velocity(-6)
+		#if not Sono_rotaciado.is_playing():
+			#Sono_rotaciado.play()
 	#if ((Input.is_action_pressed("salti") and Input.is_action_pressed("malrapidi")) or (os == "Android" and akcelometro.y > -1)) and (K.get_colliding_bodies().size() != 0):
 		#K.set_linear_velocity(Vector2(K.get_linear_velocity().x, -200))
 	if (Input.is_action_pressed("salti") or (os == "Android" and akcelometro.y > -0.7)) and (K.get_colliding_bodies().size() != 0):
@@ -60,7 +83,11 @@ func _process(delta):
 	if muso_lasita and not muso_lasado_konsumita and atendado_p == 0 and not pafita:
 		muso_lasado_konsumita = true
 		pafita = true
-		Globals.set("vivo", Globals.get("vivo")-1)
+		vivo -= 1
+		if vivo <= 0:
+			var nivelo = get_tree().get_root().get_node("Bazo").nivelo
+			get_tree().change_scene("res://Niveloj/Nivelo%s/Nivelo%s.tscn"%[nivelo-1, nivelo-1])
+		Sono_pafi.play()
 		muso_tenado /= 4
 		if muso_tenado > 10:
 			muso_tenado = 10
@@ -91,19 +118,26 @@ func _process(delta):
 		
 	#se K kolizigis malbonajxon
 	for korpo in K_koliziantaj:
-		if korpo.get_name() == "Malbonajxo" or korpo.get_name() == "Skatolo_fiksita_malbona":
-			Globals.set("vivo", Globals.get("vivo")-1)
-			if Globals.get("vivo") <= 0:
-				var nivelo = Agordejo.get_value("Konservoj", "nivelo")
+		if korpo.get_name() == "Malbonajxo" or korpo.get_name() == "Triangulo":
+			vivo -= 1
+			if vivo <= 0:
+				var nivelo = get_tree().get_root().get_node("Bazo").nivelo
 				get_tree().change_scene("res://Niveloj/Nivelo%s/Nivelo%s.tscn"%[nivelo-1, nivelo-1])
 		elif korpo.get_name() == "Bonajxo":
-			Globals.set("vivo", Globals.get("vivo")+korpo.n)
-			if Globals.get("vivo") > 100:
-				Globals.set("vivo", 100)
+			vivo+=korpo.n
+			if vivo > 100:
+				vivo = 100
 			korpo.get_parent().free()
+		
+		#iru al sekva nivelo
+		elif korpo.get_name() == "Transtempilo":
+			var nivelo = get_tree().get_root().get_node("Bazo").nivelo
+			get_tree().change_scene("res://Niveloj/Nivelo%s/Nivelo%s.tscn"%[nivelo+1, nivelo+1])
+		elif korpo.get_name() == "reTranstempilo":
+			var nivelo = get_tree().get_root().get_node("Bazo").nivelo
+			get_tree().change_scene("res://Niveloj/Nivelo%s/Nivelo%s.tscn"%[nivelo-1, nivelo-1])
 	
 	#gxisdatigi la vido de la vivo
-	get_node("CanvasLayer/Vivo").set_val(Globals.get("vivo"))
-	
-	
+	#get_node("CanvasLayer/Vivo").set_val(vivo)
+	get_node("RigidBody2D/Vivo").set_color("%xff6600"%((119-vivo)))
 
