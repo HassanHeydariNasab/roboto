@@ -64,17 +64,17 @@ func _process(delta):
 		#if not Sono_rotaciado_malrapida.is_playing():
 			#Sono_rotaciado_malrapida.play()
 	elif Input.is_action_pressed("iri") or (os == "Android" and akcelometro.x < -3):
-		K.set_angular_velocity(6)
+		K.set_angular_velocity(7)
 		#if not Sono_rotaciado.is_playing():
 			#Sono_rotaciado.play()
 	elif Input.is_action_pressed("reveni") or (os == "Android" and akcelometro.x > 3):
-		K.set_angular_velocity(-6)
+		K.set_angular_velocity(-7)
 		#if not Sono_rotaciado.is_playing():
 			#Sono_rotaciado.play()
-	#if ((Input.is_action_pressed("salti") and Input.is_action_pressed("malrapidi")) or (os == "Android" and akcelometro.y > -1)) and (K.get_colliding_bodies().size() != 0):
-		#K.set_linear_velocity(Vector2(K.get_linear_velocity().x, -200))
-	if (Input.is_action_pressed("salti") or (os == "Android" and akcelometro.y > -0.7)) and (K.get_colliding_bodies().size() != 0):
-		K.set_linear_velocity(Vector2(K.get_linear_velocity().x, -600))
+	if (Input.is_action_pressed("salti") or (os == "Android" and akcelometro.y > -0.7)):
+		if K_koliziantaj.size() > 0:
+			if K_koliziantaj[0].get_name() == "TileMap":
+				K.set_linear_velocity(Vector2(K.get_linear_velocity().x, -600))
 
 	F.set_global_pos(K.get_global_pos())
 	var a = F.get_angle_to(get_global_mouse_pos())
@@ -118,7 +118,7 @@ func _process(delta):
 		
 	#se K kolizigis malbonajxon
 	for korpo in K_koliziantaj:
-		if korpo.get_name() == "Malbonajxo" or korpo.get_name() == "Triangulo":
+		if korpo.get_name() == "Malbonakvo" or korpo.get_name() == "Triangulo":
 			vivo -= 1
 			if vivo <= 0:
 				var nivelo = get_tree().get_root().get_node("Bazo").nivelo

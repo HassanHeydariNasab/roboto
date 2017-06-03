@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Kugloj/Kuglo.gd" type="Script" id=1]
-[ext_resource path="res://kuglo.png" type="Texture" id=2]
+[ext_resource path="res://Kugloj/kuglo.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 

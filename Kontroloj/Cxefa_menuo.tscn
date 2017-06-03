@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Kontroloj/Cxefa_menuo.gd" type="Script" id=1]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://Muzikoj/horora_atmosfero.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Muzikoj/conscience-pilot-drumloop.ogg" type="AudioStream" id=3]
 
 [node name="Panel" type="Panel"]
 
@@ -100,7 +100,7 @@ shortcut = null
 text = "Eliri"
 flat = false
 
-[node name="Muziko_horora_atmosfero" type="StreamPlayer" parent="."]
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 3 )
 stream/play = false
